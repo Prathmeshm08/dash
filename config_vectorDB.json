@@ -1,0 +1,74 @@
+{
+    "index_dir": "indexes_small_new",
+    "top_k": 5,
+    "CROP_PADDING": 15,
+    "REJECTED_CROP_SAVE_DIR": "Rejected_Crops",
+    "negative_classes" : [
+            "damaged_draincover",
+            "damaged_studs",
+            "water_stagnation",
+            "cracking",
+            "pothole"
+        ]
+        ,
+    "violation_classes": {
+        "detection": [
+            "confused_fence",
+            "damaged_bus_shelter",
+            "damaged_draincover",
+            "damaged_faded_crashbarrier",
+            "damaged_faded_kerb",
+            "damaged_footpath",
+            "damaged_lights",
+            "damaged_plantation",
+            "damaged_roadside_objects",
+            "damaged_rumble",
+            "damaged_signboard",
+            "damaged_studs",
+            "encroachment",
+            "faded_pavement_marking",
+            "missing_plantation",
+            "road_garbage",
+            "unauthorized_median_opening",
+            "unauthorized_signboard",
+            "vegetation_obstruction",
+            "water_stagnation"
+        ],
+        "segmentation": [
+            "cracking",
+            "edge_drop",
+            "group_cracking",
+            "pothole",
+            "rutting"
+        ]
+    },
+
+    "thresholds": {
+        "confused_fence": 0.80,
+        "damaged_bus_shelter": 0.80,
+        "damaged_draincover": 0.80,
+        "damaged_faded_crashbarrier": 0.80,
+        "damaged_faded_kerb": 0.80,
+        "damaged_footpath": 0.80,
+        "damaged_lights": 0.80,
+        "damaged_plantation": 0.80,
+        "damaged_roadside_objects": 0.80,
+        "damaged_rumble": 0.80,
+        "damaged_signboard": 0.80,
+        "damaged_studs": 0.80,
+        "encroachment": 0.80,
+        "faded_pavement_marking": 0.80,
+        "missing_plantation": 0.80,
+        "road_garbage": 0.80,
+        "unauthorized_median_opening": 0.80,
+        "unauthorized_signboard": 0.80,
+        "vegetation_obstruction": 0.80,
+        "water_stagnation": 0.80,
+
+        "cracking": 0.80,
+        "edge_drop": 0.80,
+        "group_cracking": 0.80,
+        "pothole": 0.80,
+        "rutting": 0.80
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "violation_classes" : {
+        "detection" :[ "damaged_bus_shelter", "damaged_draincover", 
+        "damaged_footpath", "damaged_lights", "damaged_plantation","damaged_roadside_objects",
+         "damaged_rumble", "damaged_signboard", "damaged_studs", "encroachment", "missing_plantation", 
+         "road_garbage", "unauthorized_median_opening", "unauthorized_signboard", "vegetation_obstruction", "water_stagnation"],
+        "segmentation" :["cracking", "edge_drop", "group_cracking", "pothole", "rutting"],
+        "segmentation_2":["crash_barrier","fence","foothpath","kerb","metal_beam","pavment","small_crashbarrier"]
+    },
+    "models": {
+        "detection_model_path": "Models/Detection_Day/detection_itr_10_best.pt",
+        "segmentation_model_path": "Models/Segmentation/segmentation_itr_5_best.pt",
+        "segmentation_2_model_path": "Models/Segmentation/segment22.pt",
+        "classification_model_path": "Models/Classification/classification_of_10.pt"
+    },
+    "ocr_coordinates": {
+        "top_left": [0.0, 0.94],
+        "bottom_right": [0.34, 1.0]
+    },
+    "ocr_model_dir": "Models/easyocr_models",
+    "defect_mapping": {
+        "pothole": { "Category": "Pavement", "CategoryId": 1, "DefectTypeId": 1 },
+        "cracking": { "Category": "Pavement", "CategoryId": 1, "DefectTypeId": 2 },
+        "group_cracking": { "Category": "Pavement", "CategoryId": 1, "DefectTypeId": 3 },
+        "rutting": { "Category": "Pavement", "CategoryId": 1, "DefectTypeId": 4 },
+ 
+        "raincut": { "Category": "Shoulders", "CategoryId": 2, "DefectTypeId": 5 },
+        "edge_drop": { "Category": "Shoulders", "CategoryId": 2, "DefectTypeId": 6 },
+ 
+    
+        "vegetation_obstruction": { "Category": "Plantation", "CategoryId": 4, "DefectTypeId": 8 },
+        "missing_plantation": { "Category": "Plantation", "CategoryId": 4, "DefectTypeId": 9 },
+        "damaged_plantation": { "Category": "Plantation", "CategoryId": 4, "DefectTypeId": 10 },
+ 
+        "damaged_draincover": { "Category": "Drainage", "CategoryId": 5, "DefectTypeId": 11 },
+        "water_stagnation": { "Category": "Drainage", "CategoryId": 5, "DefectTypeId": 12 },
+ 
+        "damaged_footpath": { "Category": "Footpath", "CategoryId": 6, "DefectTypeId": 13 },
+
+        
+        "damaged_signboard": { "Category": "Signboards", "CategoryId": 8, "DefectTypeId": 15 },
+        "poor_visibility": { "Category": "Signboards", "CategoryId": 8, "DefectTypeId": 26 },
+ 
+        "damaged_roadside_objects": { "Category": "Blinkers, Attenuators, Delineators, Anti-Glare", "CategoryId": 9, "DefectTypeId": 16 },
+ 
+        "damaged_rumble": { "Category": "Road Studs, Rumble Strips", "CategoryId": 10, "DefectTypeId": 17 },
+        "damaged_studs": { "Category": "Road Studs, Rumble Strips", "CategoryId": 10, "DefectTypeId": 18 },
+ 
+        "damaged_bus_shelter": { "Category": "Bus Bay", "CategoryId": 12, "DefectTypeId": 20 },
+ 
+        "damaged_lights": { "Category": "Highway Lighting", "CategoryId": 13, "DefectTypeId": 21 },
+        "non_functional_lights": { "Category": "Highway Lighting", "CategoryId": 13, "DefectTypeId": 27 },
+ 
+        "unauthorized_median_opening": { "Category": "Encroachment", "CategoryId": 14, "DefectTypeId": 22 },
+        "unauthorized_signboard": { "Category": "Encroachment", "CategoryId": 14, "DefectTypeId": 23 },
+        "encroachment": { "Category": "Encroachment", "CategoryId": 14, "DefectTypeId": 24 },
+ 
+        "road_garbage": { "Category": "Cleanliness", "CategoryId": 15, "DefectTypeId": 25 },
+        "damaged_crash_barrier":{ "Category": "Crash Barriers", "CategoryId": 7, "DefectTypeId": 14 },
+        "damaged_kerb":{ "Category": "Kerb & Median", "CategoryId": 3, "DefectTypeId": 7 },
+        "damaged_pavment": { "Category": "Pavement Marking", "CategoryId": 11, "DefectTypeId": 19 }
+    },
+
+    "data_saving_folder_path": "parent_folder",
+
+    "KAFKA": {
+        "KAFKA_BROKER": "172.18.1.4:9092",
+        "TOPIC": "video-payloads",
+        "ENABLE_FILTER": true
+    },
+    "CLIP_SAVING_LENGTH": 1,
+
+    "DEFAULT_FPS": 30,
+
+    "cooldown_thresholds": {
+        "confused_fence": 60,
+        "damaged_bus_shelter": 30,
+        "damaged_draincover": 5,
+        "damaged_crash_barrier": 10,
+        "damaged_kerb": 10,
+        "damaged_foothpath": 10,
+        "damaged_lights": 60,
+        "damaged_plantation": 60,
+        "damaged_roadside_objects": 60,
+        "damaged_rumble": 60,
+        "damaged_signboard": 60,
+        "damaged_studs": 60,
+        "encroachment": 60,
+        "damaged_pavment": 10,
+        "missing_plantation": 60,
+        "road_garbage": 30,
+        "unauthorized_median_opening": 60,
+        "unauthorized_signboard": 60,
+        "vegetation_obstruction": 60,
+        "water_stagnation": 20,
+        "cracking": 20,
+        "edge_drop": 20,
+        "group_cracking": 20,
+        "pothole": 5,
+        "rutting": 20,
+        "poor_visibility": 20,
+        "non_functional_lights": 20
+
+    },
+    "BOTSORT_PATH": "botsort_local.yaml",
+    "SEGMENTATION_ROI_PATH": "roi_coordinates_v1.0.json",
+    "ENABLE_VECTOR_DB" : false,
+    "VECTORDB_CONFIG_PATH": "config_vectorDB.json"
+
+}

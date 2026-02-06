@@ -1,0 +1,24 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Modified BoT-SORT config for low-confidence segmentation models
+
+tracker_type: botsort  # ['botsort', 'bytetrack']
+
+# --- Association thresholds ---
+track_high_thresh: 0.2    # lowered (was 0.5) — allow weaker detections in first matching
+track_low_thresh: 0.1     # lowered (was 0.1) — allow even weaker matches in second pass
+new_track_thresh: 0.25     # lowered (was 0.6) — allow starting new tracks with low-confidence boxes
+track_buffer: 30           # slightly increased (was 30) — keep track longer when confidence fluctuates
+match_thresh: 0.8          # slightly lowered (was 0.8) — allow more lenient matching between frames
+fuse_score: True           # keep True — improves stability when confidence is inconsistent
+
+# --- Area and ReID ---
+# min_box_area: 5          # optional: set lower if cracks/potholes are small
+with_reid: False           # keep False unless you use a ReID model
+proximity_thresh: 0.5
+appearance_thresh: 0.25
+
+# --- Global motion compensation (GMC) ---
+gmc_method: sparseOptFlow  # good balance for real road video; keeps stable tracking
+
+# Optional debug/tuning flags (uncomment for testing)
+# debug: True
